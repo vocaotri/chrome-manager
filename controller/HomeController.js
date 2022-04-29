@@ -80,7 +80,7 @@ exports.add = function (io) {
 exports.edit = function (io) {
   io.on("connection", (socket) => {
     socket.on("edit", async (data) => {
-      let checkProxy = data.proxy.split(":").length > 1 ? true : false;
+      let checkProxy = data.chrome.proxy.split(":").length > 1 ? true : false;
       if (!checkProxy) {
         socket.emit("chrome-error", "Proxy không hợp lệ. VD: ip:port:username:password");
         return;

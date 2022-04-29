@@ -56,6 +56,7 @@ class Chrome {
         await this.page.evaluate(() => {
             document.querySelector("body > div.container-fluid > header > nav > li:nth-child(12) > a").click()
         });
+        this.page.waitFor(300);
         this.page.close();
         return true;
     }
